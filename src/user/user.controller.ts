@@ -51,4 +51,12 @@ export class UserController {
   remove(@Param('id') id: string) {
     return this.userService.remove(+id);
   }
+
+  @Get('findError')
+  @Version([VERSION_NEUTRAL, '1'])
+  findError() {
+    const a: any = {};
+    console.log(a.b.c);
+    return this.userService.findAll();
+  }
 }
