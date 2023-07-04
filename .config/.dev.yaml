@@ -1,0 +1,33 @@
+MONGODB_CONFIG:
+  name: "fast_gateway_test"
+  type: mongodb
+  url: "mongodb://127.0.0.1:27017"
+  username: "root"
+  password: "root"
+  database: "fast_gateway_test"
+  entities: "mongo"
+  logging: false
+  synchronize: true
+MYSQL_CONFIG:
+  name: "user-test"
+  type: "mysql"
+  host: "127.0.0.1"
+  port: 3306
+  username: "rain"
+  password: "123456"
+  database: "user-test"
+  entities: "mysql"
+  synchronize: true
+REDIS_CONFIG:
+  host: "127.0.0.1"
+  port: 6379
+  auth: "rain"
+  db: 1
+TEST_VALUE:
+  name: "dev_cookie"
+FEISHU_CONFIG:
+  FEISHU_URL: https://open.feishu.cn/open-apis
+  FEISHU_API_HOST: https://open.feishu.cn
+  FEISHU_APP_ID: cli_xxxxxxx
+  FEISHU_APP_SECRET: xxxxxxx
+APP_TOKEN_CACHE_KEY: APP_TOKEN_CACHE_KEY
