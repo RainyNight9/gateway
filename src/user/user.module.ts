@@ -3,10 +3,16 @@ import { UserService } from './user.service';
 import { UserController } from './user.controller';
 import { FeishuService } from './feishu/feishu.service';
 import { FeishuController } from './feishu/feishu.controller';
+import { DatabaseModule } from '@/common/database/database.module';
+import { UserProviders } from './user.providers';
 
 @Module({
-  imports: [],
+  imports: [
+    DatabaseModule
+  ],
   controllers: [UserController, FeishuController],
-  providers: [UserService, FeishuService],
+  providers: [UserService, FeishuService, ...UserProviders],
+  exports: [UserService],
 })
 export class UserModule {}
+
