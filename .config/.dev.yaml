@@ -28,6 +28,6 @@ TEST_VALUE:
 FEISHU_CONFIG:
   FEISHU_URL: https://open.feishu.cn/open-apis
   FEISHU_API_HOST: https://open.feishu.cn
-  FEISHU_APP_ID: cli_xxxxxxx
-  FEISHU_APP_SECRET: xxxxxxx
+  FEISHU_APP_ID: cli_a42e73aa44645013
+  FEISHU_APP_SECRET: 39iPrP1AXfvPuRwbz5lQ8ebgfd17Nu37
 APP_TOKEN_CACHE_KEY: APP_TOKEN_CACHE_KEY

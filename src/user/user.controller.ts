@@ -22,7 +22,7 @@ import { ConfigService } from '@nestjs/config';
 export class UserController {
   constructor(
     private readonly userService: UserService,
-    private readonly configService: ConfigService
+    private readonly configService: ConfigService,
   ) {}
 
   @Post()
@@ -68,19 +68,19 @@ export class UserController {
   @Get('findBusinessError')
   @Version([VERSION_NEUTRAL, '1'])
   findBusinessError() {
-    const a: any = {}
+    const a: any = {};
     try {
-      console.log(a.b.c)
+      console.log(a.b.c);
     } catch (error) {
-      throw new BusinessException('你这个参数错了')
+      throw new BusinessException('你这个参数错了');
     }
     return this.userService.findAll();
   }
 
   @Get('getTestName')
   getTestName() {
-    console.log(21312312312312)
-    console.log(111111)
+    console.log(21312312312312);
+    console.log(111111);
     return this.configService.get('TEST_VALUE').name;
   }
 }
