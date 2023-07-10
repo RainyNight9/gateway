@@ -36,9 +36,13 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "cross-env": "^7.0.3",
+    "dayjs": "^1.11.9",
+    "fast-json-parse": "^1.0.3",
     "fastify": "^4.19.2",
+    "pino-multi-stream": "^6.0.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
+    "split2": "^4.2.0",
     "yaml": "^2.3.1"
   },
   "devDependencies": {
