@@ -7,6 +7,7 @@ import {
   Param,
   Delete,
   Version,
+  Query
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -14,7 +15,10 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { VERSION_NEUTRAL } from '@nestjs/common';
 import { BusinessException } from 'src/common/exceptions/business.exception';
 import { ConfigService } from '@nestjs/config';
+import { AddUserDto } from './user.dto';
+import { ApiTags, ApiOperation } from '@nestjs/swagger';
 
+@ApiTags('用户')
 @Controller({
   path: 'user',
   version: '1',
@@ -24,6 +28,14 @@ export class UserController {
     private readonly userService: UserService,
     private readonly configService: ConfigService,
   ) {}
+
+  @ApiOperation({
+    summary: '新增用户',
+  })
+  @Post('/add')
+  add(@Body() user: AddUserDto) {
+    return this.userService.createOrSave(user);
+  }
 
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
