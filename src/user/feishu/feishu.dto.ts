@@ -21,3 +21,25 @@ export class FeishuMessageDto {
   @ApiProperty({ example: 'text', enum: MSG_TYPE })
   msg_type?: MSG_TYPE;
 }
+
+export class GetUserTokenDto {
+  @IsNotEmpty()
+  @ApiProperty({ example: 'xxxx', description: '飞书临时登录凭证' })
+  code: string;
+
+  app_token: string;
+}
+
+export class FeishuUserInfo {
+  accessToken?: string;
+  email: string;
+  avatarUrl: string;
+  avatarThumb: string;
+  avatarBig: string;
+  avatarMiddle: string;
+  mobile: string;
+  enName: string;
+  name: string;
+  feishuUserId: string;
+  feishuUnionId: string;
+}

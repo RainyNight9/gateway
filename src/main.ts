@@ -15,6 +15,7 @@ import { AllExceptionsFilter } from './common/exceptions/base.exception.filter';
 import { HttpExceptionFilter } from './common/exceptions/http.exception.filter';
 import { generateDocument } from './doc';
 import { FastifyLogger } from './common/logger';
+import fastifyCookie from '@fastify/cookie';
 
 declare const module: any;
 
@@ -31,6 +32,10 @@ async function bootstrap() {
     AppModule,
     new FastifyAdapter(fastifyInstance),
   );
+
+  app.register(fastifyCookie, {
+    secret: 'my-secret', // for cookies signature
+  });
 
   // 统一响应式格式
   app.useGlobalInterceptors(new TransformInterceptor());
