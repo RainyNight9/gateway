@@ -8,6 +8,7 @@ import { ConfigModule } from '@nestjs/config';
 import { getConfig } from './utils/index';
 import { AuthModule } from './auth/auth.module';
 import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
+import { IntercepterModule } from './core/intercepter.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
     }),
     UserModule,
     AuthModule,
+    IntercepterModule,
   ],
   controllers: [AppController],
   providers: [
